@@ -16,9 +16,14 @@ def finalizar_app():  # finaliza o app
     print("Saindo do programa...\n")
     exit()
 
+def voltar_ao_menu_principal():  # volta ao menu principal
+    input("\nPressione Enter para voltar ao menu\n")
+    main()
+
 def opcao_invalida():  # exibe uma mensagem de opção inválida
     print("Opção inválida!\n")
     input("Pressione Enter para voltar ao menu\n")
+    voltar_ao_menu_principal()
 
 def cadastrar_novo_restaurante():  # cadastra um novo restaurante
     os.system('cls')
@@ -26,16 +31,14 @@ def cadastrar_novo_restaurante():  # cadastra um novo restaurante
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
     restaurantes.append(nome_do_restaurante)  # adiciona o restaurante à lista
     print(f"O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n")
-    input("\nPressione Enter para voltar ao menu\n")
+    voltar_ao_menu_principal()
 
 def listar_restaurantes():  # lista os restaurantes cadastrados
     os.system('cls')
     print("Listando os restaurantes\n")
     for restaurante in restaurantes: # para cada restaurante na lista restaurantes
         print(f".{restaurante}")  # imprime o nome do restaurante
-
-    input("\nPressione Enter para voltar ao menu\n")
-    main()
+    voltar_ao_menu_principal()
 
 
 def escolher_opcao():  # coleta o input do usuário e chama a função correspondente
